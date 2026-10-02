@@ -3,7 +3,9 @@
 **Daily, audited summaries of US food recalls from the FDA, USDA and CDC — including the stores that sold them.**
 
 🌐 **Website:** https://foodrecalldigest.github.io/food-recall-digest/
+
 ✉️ **Subscribe:** https://foodrecalldigest.github.io/food-recall-digest/subscribe.html
+
 📡 **RSS feed:** https://foodrecalldigest.github.io/food-recall-digest/feed.xml
 
 ---
