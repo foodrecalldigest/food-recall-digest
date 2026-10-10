@@ -1,15 +1,142 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Subscribe</title><link rel="alternate" type="application/rss+xml" title="Food Recall Digest" href="https://foodrecalldigest.com/feed.xml">
-<style>body{margin:0;background:#eef1f5;font-family:Arial,Helvetica,sans-serif;color:#1a2433}
-.wrap{max-width:640px;margin:0 auto;padding:20px 16px}.top{background:#14324f;color:#fff;padding:28px 24px;border-radius:12px}
-.top h1{margin:6px 0 0;font-size:28px}.eyebrow{font-size:12px;letter-spacing:2.5px;font-weight:bold;color:#9cc3ea}
-nav{padding:14px 4px;font-size:14px}nav a{color:#14324f;font-weight:bold;text-decoration:none}nav a.cta{color:#c4122f}
-.card{background:#fff;border:1px solid #e4e8ee;border-radius:12px;padding:20px 22px;margin:14px 0}
-.card a{color:#14324f;font-weight:bold}.muted{color:#5d6878;font-size:14px}iframe{width:100%;border:0;min-height:760px}
-.btn{display:inline-block;background:#14324f;color:#fff!important;padding:12px 18px;border-radius:6px;text-decoration:none;font-weight:bold}
-footer{font-size:12px;color:#5d6878;line-height:1.6;padding:20px 4px}</style></head>
-<body><div class="wrap"><div class="top"><div class="eyebrow">&#128737;&#65039; FOOD RECALL DIGEST</div><h1>Subscribe</h1>
-<div style="color:#d3e1f0;padding-top:8px">Daily, audited summaries of US food recalls from FDA, USDA and CDC, with the stores that sold them.</div></div>
-<nav><a href="https://foodrecalldigest.com/">Latest</a> &middot; <a href="https://foodrecalldigest.com/active.html">All active</a> &middot; <a href="https://foodrecalldigest.com/archive.html">Archive</a> &middot; <a href="https://foodrecalldigest.com/subscribe.html" class="cta">Subscribe</a></nav><div class="card"><p>Sign-ups open soon.</p></div><div class="card muted">Prefer no email? Follow the <a href="https://foodrecalldigest.com/feed.xml">RSS feed</a>.</div>
-<footer>Independent summary of public FDA, USDA and CDC data. Not an official government notice and not affiliated with any agency.
-Not medical advice; if you ate a recalled product and feel sick, contact a doctor. Always confirm details on the official notice.</footer></div></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Subscribe</title><meta name="color-scheme" content="light only"><link rel="alternate" type="application/rss+xml" title="Food Recall Digest" href="https://foodrecalldigest.com/feed.xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=DM+Sans:wght@400;500;700&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap"><style>
+:root{--ink:#0e1a14;--green:#0b5d3b;--green-d:#08422a;--lime:#d4f25c;--ground:#f2f5f0;--muted:#4d5c54;--line:#e6ebe4;
+--head:'Space Grotesk','Trebuchet MS',Arial,sans-serif;--body:'DM Sans',Helvetica,Arial,sans-serif;--mono:'IBM Plex Mono',Consolas,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--green)}a:hover{color:var(--green-d)}
+:focus-visible{outline:3px solid var(--green);outline-offset:2px;border-radius:6px}
+h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.02em;margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:12px;z-index:20;background:#fff;padding:8px 12px}
+header.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{font-family:var(--head);font-weight:700;font-size:20px;letter-spacing:-.02em;color:var(--ink);text-decoration:none}.brand span{color:var(--green)}
+nav.main{display:flex;flex-wrap:wrap;gap:6px 20px;align-items:center;font-weight:700;font-size:15px}
+nav.main a{color:var(--ink);text-decoration:none}nav.main a:hover{color:var(--green)}
+nav.main a.cta{background:var(--ink);color:var(--lime);padding:9px 18px;border-radius:999px}
+.hero{background:var(--lime);border-radius:32px;padding:clamp(24px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:32px;align-items:center;margin-top:28px}
+.pill,.hero .pill{display:inline-block;background:var(--ink);color:var(--lime);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700}
+.hero h1{font-size:clamp(32px,5vw,60px);line-height:1.03;margin-top:18px}
+.hero p.lede{font-size:clamp(16px,1.6vw,18px);margin:18px 0 0;max-width:560px}
+.search{background:#fff;border-radius:24px;padding:26px}
+.search label{display:block;font-family:var(--head);font-weight:700;font-size:24px}
+.search .hint{margin:4px 0 14px;font-size:14px;color:var(--muted)}
+.search form{display:flex;flex-wrap:wrap;gap:8px}
+.search input{flex:1 1 200px;min-width:0;font:inherit;font-size:16px;padding:13px 16px;border:2px solid var(--ink);border-radius:999px}
+.btn,.search button{display:inline-block;background:var(--green);color:#fff;border:0;border-radius:999px;padding:13px 22px;font:inherit;font-weight:700;font-size:15px;cursor:pointer;text-decoration:none}
+.btn:hover,.search button:hover{background:var(--green-d);color:#fff}
+.btn.dark{background:var(--ink);color:var(--lime)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:18px}
+.stat{border-radius:16px;padding:12px 6px;text-align:center}.stat b{display:block;font-family:var(--head);font-size:28px;line-height:1.1}.stat span{font-size:12px;font-weight:700}
+.s-new{background:var(--green);color:#fff}.s-germ{background:#fdecef;color:#8f0d22}.s-all{background:#e8f0fc;color:#183f80}.s-open{background:#fff1e0;color:#6e3900}
+.banner{margin-top:18px;background:#fdecef;border-radius:20px;padding:16px 20px;font-weight:500}
+section.block{padding:48px 0 8px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:10px;margin-bottom:20px}
+.sec-head h2{font-size:clamp(28px,3.4vw,38px)}.sec-head p{margin:6px 0 0;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px}
+.rcard{display:flex;flex-direction:column;background:var(--ground);border-radius:26px;padding:24px;color:var(--ink);text-decoration:none;transition:transform .2s ease}
+.rcard:hover{transform:translateY(-6px) rotate(-.4deg);color:var(--ink)}
+.rcard h3{font-size:22px;line-height:1.2;margin-top:16px}.rcard p{margin:8px 0 16px;font-size:15px;color:#33443a}
+.rc{display:flex;flex-direction:column;background:var(--ground);border-radius:26px;padding:24px;scroll-margin-top:84px;transition:transform .2s ease}
+.rc:not(.open){cursor:pointer}.rc:not(.open):hover{transform:translateY(-6px) rotate(-.4deg)}
+.rc-head{display:flex;flex-direction:column;flex:1}
+.rc h3{font-size:22px;line-height:1.2;margin-top:16px;transition:font-size .25s ease}
+.rc-toggle{background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.rc-toggle:focus-visible{outline:3px solid var(--green);outline-offset:4px;border-radius:6px}
+.rc-sum{margin:8px 0 16px;font-size:15px;color:#33443a}
+.rc-more{margin-top:14px;font-size:14px;font-weight:700;color:var(--green)}
+.rc-more:after{content:" +";font-size:16px}.rc.open .rc-more:after{content:" \2212"}
+.rc.open{grid-column:1/-1;padding:clamp(22px,4vw,40px);border-radius:30px}
+.rc.open h3{font-size:clamp(26px,3.2vw,36px);line-height:1.12}
+.rc.open .rc-sum,.rc.open .rc-do{display:none}
+.rc.open .rc-more{order:9;margin-top:22px}
+.rc-body{overflow:hidden}.js .rc:not(.open) .rc-body{display:none}
+.rc .full{margin:8px 0 0;color:var(--muted);font-size:15px}
+.rc-body>.do{margin-top:18px;font-size:16px}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--muted)}
+.chip{display:inline-block;background:#fff;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700}
+.do{margin-top:auto;background:var(--ink);color:#fff;border-radius:16px;padding:12px 14px;font-weight:700;font-size:15px;line-height:1.4}.do b{color:var(--lime)}
+.detail{background:var(--ground);border-radius:30px;padding:clamp(20px,4vw,40px);margin-top:20px;scroll-margin-top:90px}
+.detail h3{font-size:clamp(24px,3vw,32px);line-height:1.15;margin-top:14px}
+.detail .full{margin:8px 0 0;color:var(--muted);font-size:15px}
+.photos{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.photos img{width:140px;height:140px;object-fit:cover;border-radius:18px;background:#fff}
+.icon{width:96px;height:96px;border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:44px;margin-top:18px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px;margin-top:22px}
+.box{background:#fff;border-radius:22px;padding:20px 22px}
+.sub{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin:0 0 6px}
+.box ul{margin:0;padding-left:20px}.box li{padding:3px 0}
+.codes li{font-family:var(--mono);font-size:14px}
+.badge{display:inline-block;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700}.badge.ok{background:#e3f1ea;color:#0b5d3b}.badge.na{background:var(--ground);color:var(--muted)}
+.lead{margin-top:10px;background:#fff1e0;color:#6e3900;border-radius:14px;padding:10px 12px;font-size:14px}
+.detail .do{margin-top:18px;font-size:16px}
+.sources{margin:14px 0 0;font-size:14px;color:var(--muted)}
+.callout{margin-top:16px;background:#fff;border-radius:18px;padding:14px 16px;font-weight:500}
+.outbreaks{background:var(--green);color:#fff;border-radius:32px;padding:clamp(24px,5vw,52px)}
+.outbreaks h2{font-size:clamp(28px,3.4vw,36px);margin-bottom:20px}
+.otiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px}
+.otile{background:#fff;color:var(--ink);border-radius:22px;padding:20px}.otile b{display:block;font-family:var(--head);font-size:44px;line-height:1;color:#c4122f}
+.otile .t{font-weight:700;margin-top:6px}.otile .m{font-size:14px;color:var(--muted);margin-top:4px}.otile .a{font-size:14px;font-weight:700;margin-top:8px}
+.still{background:var(--ground);border-radius:30px;padding:clamp(20px,4vw,40px)}
+.group{margin-top:18px}.group:first-child{margin-top:0}
+.olist{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:10px}
+.olist li{background:#fff;border-radius:16px;padding:12px 14px 12px 18px;border-left:5px solid var(--c)}
+.olist a{color:var(--ink);font-weight:700}.olist span{display:block;font-size:13px;color:var(--muted)}
+.allopen{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;background:#fff1e0;border-radius:30px;padding:clamp(20px,4vw,36px);margin-top:20px}
+.allopen b{font-family:var(--head);font-size:44px;line-height:1;color:#6e3900}
+details.stores{background:#fff;border:2px solid var(--ground);border-radius:24px;margin-top:12px}
+details.stores>summary{cursor:pointer;list-style:none;padding:18px 22px;font-family:var(--head);font-weight:700;font-size:19px}
+details.stores>summary::-webkit-details-marker{display:none}
+details.stores>summary:after{content:"+";float:right;font-size:24px;line-height:1;color:var(--green)}details.stores[open]>summary:after{content:"\2212"}
+details.stores>summary small{display:block;font-family:var(--body);font-weight:500;font-size:14px;color:var(--muted);margin-top:2px}
+.state{padding:0 22px 16px}.state h4{margin:8px 0 8px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+.slist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:6px 18px}
+.slist li{border-bottom:1px solid var(--line);padding:6px 0;font-size:14px}.slist a{color:var(--muted);text-decoration:none}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap}.linkbtn{background:none;border:0;padding:0;font:inherit;font-weight:700;color:var(--green);cursor:pointer;text-decoration:underline}
+.signup{background:var(--lime);border-radius:32px;padding:clamp(24px,5vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px;align-items:center}
+.signup h2{font-size:clamp(28px,3.6vw,44px);line-height:1.05}.signup p{margin:10px 0 0}
+.signup form{display:flex;flex-wrap:wrap;gap:8px}.signup input{flex:1 1 220px;min-width:0;font:inherit;font-size:16px;padding:14px 16px;border:2px solid var(--ink);border-radius:999px}
+.signup .note{font-size:13px;margin-top:10px}
+footer.foot{background:var(--ink);color:#b9c8bf;margin-top:56px}
+footer.foot .wrap{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;padding-top:36px;padding-bottom:40px;font-size:14px}
+footer.foot .brand{color:#fff}footer.foot .brand span{color:var(--lime)}footer.foot a{color:var(--lime)}
+footer.foot nav{display:flex;flex-wrap:wrap;gap:16px}
+.page{padding-bottom:8px}.page .card{background:var(--ground);border-radius:26px;padding:22px 24px;margin:16px 0}
+.page .card a{color:var(--ink);font-weight:700}.muted{color:var(--muted);font-size:14px}.page iframe{width:100%;border:0;min-height:760px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (max-width:640px){.wrap{padding:0 16px}.hero{border-radius:24px}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.upd{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.upd>li{background:#fff;border-radius:20px;padding:16px 20px}.upd>li>b{display:block;font-family:var(--head);font-size:18px}
+.upd ul{margin:8px 0 0;padding-left:20px}.upd ul li{padding:2px 0}.upd .was{color:var(--muted)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.rcard,.rc,.rc h3{transition:none}.rcard:hover,.rc:not(.open):hover{transform:none}}
+</style><noscript><style>.reveal{opacity:1;transform:none}</style></noscript><script>
+document.addEventListener('DOMContentLoaded',function(){
+ var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var els=document.querySelectorAll('.reveal');
+ if(calm||!('IntersectionObserver' in window)){els.forEach(function(x){x.classList.add('in')});}
+ else{var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(x){io.observe(x)});}
+ document.querySelectorAll('[data-count]').forEach(function(n){var to=+n.getAttribute('data-count');if(calm||!to)return;var t0=null;
+  function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/900,1);n.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step)}
+  n.textContent='0';requestAnimationFrame(step)});
+ document.querySelectorAll('.rc').forEach(function(c){
+  c.querySelector('.rc-head').addEventListener('click',function(ev){if(ev.target.closest('a'))return;setCard(c,!c.classList.contains('open'),true)})});
+ var h=location.hash&&document.querySelector(location.hash);
+ if(h){if(h.classList.contains('rc')){setCard(h,true,false);h.scrollIntoView()}
+  var d=h.closest('details');while(d){d.open=true;d=d.parentElement.closest('details')}}
+});
+document.documentElement.classList.add('js');
+function setCard(c,open,animate){
+ var body=c.querySelector('.rc-body'),btn=c.querySelector('.rc-toggle'),more=c.querySelector('.rc-more');
+ var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,fx=animate&&!calm&&body.animate;
+ if(open===c.classList.contains('open'))return;
+ if(open){c.classList.add('open');btn.setAttribute('aria-expanded','true');more.textContent='Hide details';
+  if(fx){var hh=body.scrollHeight;body.animate([{height:'0px',opacity:0,transform:'translateY(-10px)'},{height:hh+'px',opacity:1,transform:'none'}],{duration:450,easing:'cubic-bezier(.2,.8,.2,1)'})}
+  if(animate){setTimeout(function(){c.scrollIntoView({behavior:calm?'auto':'smooth',block:'start'})},30);history.replaceState(null,'','#'+c.id)}
+ }else{var done=function(){c.classList.remove('open');btn.setAttribute('aria-expanded','false');more.textContent='Show details'};
+  if(fx){var a=body.animate([{height:body.scrollHeight+'px',opacity:1},{height:'0px',opacity:0}],{duration:260,easing:'ease-in'});a.onfinish=done}else done();
+  if(animate&&location.hash==='#'+c.id)history.replaceState(null,'',location.pathname+location.search)}
+}
+function setCards(o){document.querySelectorAll('.rc').forEach(function(c){setCard(c,o,false)})}
+function setStores(o){document.querySelectorAll('details.stores').forEach(function(d){d.open=o})}
+</script></head><body><a class="skip" href="#main">Skip to content</a><header class="top"><div class="wrap"><a class="brand" href="https://foodrecalldigest.com/">food recall digest<span>.</span></a><nav class="main" aria-label="Main"><a href="https://foodrecalldigest.com/">Today</a><a href="https://foodrecalldigest.com/active.html">All open recalls</a><a href="https://foodrecalldigest.com/archive.html">Archive</a><a class="cta" href="https://foodrecalldigest.com/subscribe.html">Subscribe</a></nav></div></header><main id="main" class="wrap page"><div class="hero" style="display:block"><span class="pill">Recall facts, daily</span><h1>Subscribe</h1><p class="lede">Daily, audited summaries of US food recalls from FDA, USDA and CDC, with the stores that sold them.</p></div><div style="margin-top:20px"><div class="signup reveal"><div><h2>Get the daily digest</h2><p>One short email on days with a new or updated recall. Every product, code and confirmed store. Free.</p></div><div><p style="margin:0;font-weight:700">Sign-ups open soon.</p><p class="note">Until then, bookmark this site: it&rsquo;s updated every evening.</p></div></div></div></main><footer class="foot"><div class="wrap"><div style="max-width:560px"><a class="brand" href="https://foodrecalldigest.com/">food recall digest<span>.</span></a><p style="margin:8px 0 0">Independent summary of public FDA, USDA and CDC data. Not an official government notice and not affiliated with any agency. Not medical advice; if you ate a recalled product and feel sick, contact a doctor.</p></div><nav aria-label="Footer"><a href="https://foodrecalldigest.com/">Today</a><a href="https://foodrecalldigest.com/active.html">All open recalls</a><a href="https://foodrecalldigest.com/archive.html">Archive</a><a href="https://foodrecalldigest.com/subscribe.html">Subscribe</a></nav></div></footer></body></html>
