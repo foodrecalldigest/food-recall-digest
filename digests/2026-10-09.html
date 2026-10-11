@@ -136,7 +136,8 @@ function setCard(c,open,animate){
  var body=c.querySelector('.rc-body'),btn=c.querySelector('.rc-toggle'),more=c.querySelector('.rc-more');
  var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,fx=animate&&!calm&&body.animate;
  if(open===c.classList.contains('open'))return;
- if(open){c.classList.add('open');btn.setAttribute('aria-expanded','true');more.textContent='Hide details';
+ if(open){body.querySelectorAll('img[loading=lazy]').forEach(function(i){i.loading='eager'});  // iPhone Safari can skip lazy photos in a just-opened card
+  c.classList.add('open');btn.setAttribute('aria-expanded','true');more.textContent='Hide details';
   if(fx){var hh=body.scrollHeight;body.animate([{height:'0px',opacity:0,transform:'translateY(-10px)'},{height:hh+'px',opacity:1,transform:'none'}],{duration:450,easing:'cubic-bezier(.2,.8,.2,1)'})}
   if(animate){setTimeout(function(){c.scrollIntoView({behavior:calm?'auto':'smooth',block:'start'})},30);history.replaceState(null,'','#'+c.id)}
  }else{var done=function(){c.classList.remove('open');btn.setAttribute('aria-expanded','false');more.textContent='Show details'};
