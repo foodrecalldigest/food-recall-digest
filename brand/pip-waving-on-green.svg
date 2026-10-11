@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <title>(for green backgrounds: lime lid) Pip, waving (follow / subscribe slides)</title>
+  <rect x="38" y="16" width="44" height="14" rx="4" fill="#D4F25C" stroke="#0E1A14" stroke-width="3"/>
+  <rect x="30" y="28" width="60" height="72" rx="22" fill="#FFFFFF" stroke="#0E1A14" stroke-width="4"/>
+  <rect x="32" y="62" width="56" height="20" fill="#D4F25C"/>
+  <g fill="#0E1A14"><rect x="41" y="66" width="2.5" height="12"/><rect x="45.5" y="66" width="1.5" height="12"/><rect x="49" y="66" width="3" height="12"/><rect x="54" y="66" width="1.5" height="12"/><rect x="57.5" y="66" width="2.5" height="12"/></g>
+  <circle cx="50" cy="46" r="4.5" fill="#0E1A14"/><circle cx="70" cy="46" r="4.5" fill="#0E1A14"/>
+  <path d="M52 53 Q60 60 68 53" fill="none" stroke="#0E1A14" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M30 66 Q16 58 18 40" fill="none" stroke="#0E1A14" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="18" cy="36" r="5" fill="#FFFFFF" stroke="#0E1A14" stroke-width="3.5"/>
+  <path d="M10 30 Q8 36 10 42 M26 30 Q28 36 26 42" fill="none" stroke="#0E1A14" stroke-width="2.5" stroke-linecap="round" opacity=".55"/>
+  <path d="M90 72 Q98 78 96 86" fill="none" stroke="#0E1A14" stroke-width="4" stroke-linecap="round"/>
+</svg>
