@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <title>(green and lime colors) Pip, all clear (quiet days with no new recalls)</title>
+  <rect x="38" y="16" width="44" height="14" rx="4" fill="#0B5D3B"/>
+  <rect x="30" y="28" width="60" height="72" rx="22" fill="#FFFFFF" stroke="#0E1A14" stroke-width="4"/>
+  <rect x="32" y="62" width="56" height="20" fill="#D4F25C"/>
+  <path d="M51 72 L57 77 L69 66" fill="none" stroke="#0E1A14" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M45 47 Q50 41 55 47 M65 47 Q70 41 75 47" fill="none" stroke="#0E1A14" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M51 53 Q60 61 69 53" fill="none" stroke="#0E1A14" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M30 70 Q18 64 16 52" fill="none" stroke="#0E1A14" stroke-width="4" stroke-linecap="round"/>
+  <path d="M90 70 Q102 64 104 52" fill="none" stroke="#0E1A14" stroke-width="4" stroke-linecap="round"/>
+</svg>

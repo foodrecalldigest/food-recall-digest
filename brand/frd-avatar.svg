@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <title>(green and lime colors) Food Recall Digest profile mark: barcode that ends in a check</title>
+  <circle cx="48" cy="48" r="48" fill="#D4F25C"/>
+  <g fill="#0B5D3B">
+    <rect x="16.5" y="29" width="5" height="38"/>
+    <rect x="24.5" y="29" width="2.5" height="38"/>
+    <rect x="29.5" y="29" width="3.5" height="38"/>
+    <rect x="36" y="29" width="5.5" height="38"/>
+    <rect x="44.5" y="29" width="2.5" height="38"/>
+  </g>
+  <path d="M53 53 L61 61 L76 36" fill="none" stroke="#0E1A14" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
