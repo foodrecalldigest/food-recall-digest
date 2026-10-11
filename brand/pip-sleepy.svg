@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <title>(green and lime colors) Pip, sleepy (quiet nights, weekends, "nothing new tonight")</title>
+  <rect x="38" y="16" width="44" height="14" rx="4" fill="#0B5D3B"/>
+  <rect x="30" y="28" width="60" height="72" rx="22" fill="#FFFFFF" stroke="#0E1A14" stroke-width="4"/>
+  <rect x="32" y="62" width="56" height="20" fill="#D4F25C"/><g fill="#0E1A14"><rect x="41" y="66" width="2.5" height="12"/><rect x="45.5" y="66" width="1.5" height="12"/><rect x="49" y="66" width="3" height="12"/><rect x="54" y="66" width="1.5" height="12"/><rect x="57.5" y="66" width="2.5" height="12"/></g>
+  <path d="M45 46 Q50 50 55 46 M65 46 Q70 50 75 46" fill="none" stroke="#0E1A14" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="60" cy="56" r="2.6" fill="#0E1A14"/><path d="M30 72 Q22 80 25 90" fill="none" stroke="#0E1A14" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/><path d="M90 72 Q98 80 95 90" fill="none" stroke="#0E1A14" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/><path d="M94 27 h9 l-9 9 h9 M105 12 h7 l-7 7 h7" fill="none" stroke="#0E1A14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"/>
+</svg>
