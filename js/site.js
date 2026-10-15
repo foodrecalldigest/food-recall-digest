@@ -36,4 +36,12 @@ function setStores(o){document.querySelectorAll('details.stores').forEach(functi
 document.addEventListener('click',function(ev){var b=ev.target.closest('[data-act]');if(!b)return;
  var a=b.getAttribute('data-act');
  if(a==='cards-open')setCards(true,b);else if(a==='cards-close')setCards(false,b);
- else if(a==='stores-open')setStores(true);else if(a==='stores-close')setStores(false);});
+ else if(a==='stores-open')setStores(true);else if(a==='stores-close')setStores(false);
+ else if(a==='share')share(b);});
+// Share a recall card: the phone's share sheet, else copy the link. Only our own site's links are shared.
+function share(b){var u=b.getAttribute('data-url')||'',t=b.getAttribute('data-title')||document.title;
+ if(!/^https:\/\/foodrecalldigest\.com\//.test(u))u=location.href;
+ var done=function(msg){var old=b.textContent;b.textContent=msg;setTimeout(function(){b.textContent=old},2000)};
+ if(navigator.share){navigator.share({title:t,url:u}).catch(function(){});return}
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(function(){done('Link copied')},function(){done('Copy failed')});return}
+ window.prompt('Copy this link:',u)}
