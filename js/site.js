@@ -4,8 +4,9 @@ document.addEventListener('DOMContentLoaded',function(){
  var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
  var els=document.querySelectorAll('.reveal');
  if(calm||!('IntersectionObserver' in window)){els.forEach(function(x){x.classList.add('in')});}
- else{var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{rootMargin:'0px 0px -6% 0px'});
-  els.forEach(function(x){io.observe(x)});}
+ else{var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{rootMargin:'0px 0px 20% 0px'});
+  els.forEach(function(x){io.observe(x)});
+  setTimeout(function(){els.forEach(function(x){x.classList.add('in')})},3000);}  // safety net: nothing stays hidden (find-in-page, print, slow devices)
  document.querySelectorAll('[data-count]').forEach(function(n){var to=+n.getAttribute('data-count');if(calm||!to)return;var t0=null;
   function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/900,1);n.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step)}
   n.textContent='0';requestAnimationFrame(step);setTimeout(function(){n.textContent=to},1300)});
