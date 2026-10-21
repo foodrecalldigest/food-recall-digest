@@ -51,8 +51,7 @@ function share(b){var u=b.getAttribute('data-url')||'',t=b.getAttribute('data-ti
    Generic on purpose: no store, brand, UPC or lot code is named. Hidden while the box has focus or text;
    reduced-motion users get a plain swap. The overlay is aria-hidden; the box keeps its label. */
 document.addEventListener('DOMContentLoaded',function(){
- var HINTS=['Try a product, like hot dogs','Try a brand name','Try the store you shop at','Try the UPC under the barcode',
-  'Try a lot code from the package','Try a product, like frozen corn'];
+ var HINTS=['A product name','A brand name','Your store’s name','UPC or lot code'];  /* short so each fits a phone-width box (user, Oct 20) */
  var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
  document.querySelectorAll('input#q').forEach(function(inp){
   var cs=getComputedStyle(inp),wrap=document.createElement('span');
