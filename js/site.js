@@ -46,3 +46,33 @@ function share(b){var u=b.getAttribute('data-url')||'',t=b.getAttribute('data-ti
  if(navigator.share){navigator.share({title:t,url:u}).catch(function(){});return}
  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(function(){done('Link copied')},function(){done('Copy failed')});return}
  window.prompt('Copy this link:',u)}
+
+/* Search box hints (user, Oct 20): the examples roll upward like a cylinder, one every few seconds.
+   Generic on purpose: no store, brand, UPC or lot code is named. Hidden while the box has focus or text;
+   reduced-motion users get a plain swap. The overlay is aria-hidden; the box keeps its label. */
+document.addEventListener('DOMContentLoaded',function(){
+ var HINTS=['Try a product, like hot dogs','Try a brand name','Try the store you shop at','Try the UPC under the barcode',
+  'Try a lot code from the package','Try a product, like frozen corn'];
+ var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ document.querySelectorAll('input#q').forEach(function(inp){
+  var cs=getComputedStyle(inp),wrap=document.createElement('span');
+  wrap.style.cssText='position:relative;display:flex;min-width:'+cs.minWidth+';flex:'+cs.flex;
+  inp.parentNode.insertBefore(wrap,inp);wrap.appendChild(inp);
+  inp.style.flex='1 1 auto';inp.style.width='100%';inp.style.minWidth='0';inp.setAttribute('placeholder','');
+  var lineH=parseFloat(cs.fontSize)*1.4,box=document.createElement('span');
+  box.setAttribute('aria-hidden','true');
+  box.style.cssText='position:absolute;top:0;bottom:0;left:'+(parseFloat(cs.paddingLeft)+parseFloat(cs.borderLeftWidth))+'px;right:14px;'+
+   'overflow:hidden;pointer-events:none;display:flex;align-items:center;color:#6b7a72;font-size:'+cs.fontSize+';white-space:nowrap';
+  var win=document.createElement('span');win.style.cssText='display:block;height:'+lineH+'px;overflow:hidden;width:100%';
+  var reel=document.createElement('span');reel.style.cssText='display:block;transition:transform .45s ease';
+  function line(t){var s=document.createElement('span');s.textContent=t;s.style.cssText='display:block;height:'+lineH+'px;line-height:'+lineH+'px;overflow:hidden;text-overflow:ellipsis';return s}
+  var i=0;reel.appendChild(line(HINTS[0]));win.appendChild(reel);box.appendChild(win);wrap.appendChild(box);
+  function show(){box.style.display=(document.activeElement===inp||inp.value)?'none':'flex'}
+  inp.addEventListener('focus',function(){box.style.display='none'});inp.addEventListener('blur',show);inp.addEventListener('input',show);show();
+  setInterval(function(){if(box.style.display==='none'||document.hidden)return;i=(i+1)%HINTS.length;
+   if(calm){reel.firstChild.textContent=HINTS[i];return}
+   reel.appendChild(line(HINTS[i]));reel.style.transform='translateY(-'+lineH+'px)';
+   setTimeout(function(){reel.style.transition='none';reel.removeChild(reel.firstChild);reel.style.transform='translateY(0)';
+    void reel.offsetHeight;reel.style.transition='transform .45s ease'},480)},3200);
+ });
+});
