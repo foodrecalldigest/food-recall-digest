@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120"><title>(green and lime colors) Pip, pointing (sign-up, "see all open recalls", next slide)</title><style>
+.p{transform-box:view-box}
+.body{transform-origin:60px 104px;animation:sway 7.3s cubic-bezier(.45,.05,.35,1) infinite}
+.eyes{transform-origin:60px 46px;animation:blink 5.7s ease-in-out infinite}
+@keyframes sway{0%,30%,100%{transform:rotate(0)}9%{transform:rotate(-2deg)}19%{transform:rotate(1.4deg)}}
+@keyframes blink{0%,91%,100%{transform:scaleY(1)}94%{transform:scaleY(.12)}97%{transform:scaleY(1)}}
+
+.point{transform-origin:90px 67px;animation:poke 4.4s cubic-bezier(.45,.05,.35,1) infinite}
+@keyframes poke{0%,44%,100%{transform:translate(0,0)}10%,30%{transform:translate(4px,-1px)}20%{transform:translate(0,0)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style><g class="p body"><rect x="38" y="16" width="44" height="14" rx="4" fill="#0B5D3B"/><rect x="30" y="28" width="60" height="72" rx="22" fill="#FFFFFF" stroke="#0E1A14" stroke-width="4"/><rect x="32" y="62" width="56" height="20" fill="#D4F25C"/><g fill="#0E1A14"><rect x="41" y="66" width="2.5" height="12"/><rect x="45.5" y="66" width="1.5" height="12"/><rect x="49" y="66" width="3" height="12"/><rect x="54" y="66" width="1.5" height="12"/><rect x="57.5" y="66" width="2.5" height="12"/></g><g class="p eyes"><circle cx="53" cy="46" r="4.5" fill="#0E1A14"/><circle cx="73" cy="46" r="4.5" fill="#0E1A14"/></g><path d="M53 54 Q60 59 67 54" fill="none" stroke="#0E1A14" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M30 72 Q22 80 25 90" fill="none" stroke="#0E1A14" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/><g class="p point"><path d="M90 67 Q100 63 107 58" fill="none" stroke="#0E1A14" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/><circle cx="110" cy="57" r="4.5" fill="#FFFFFF" stroke="#0E1A14" stroke-width="3.5"/></g></g></svg>

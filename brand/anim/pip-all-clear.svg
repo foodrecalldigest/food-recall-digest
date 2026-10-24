@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120"><title>(green and lime colors) Pip, all clear (quiet days with no new recalls)</title><style>
+.p{transform-box:view-box}
+.body{transform-origin:60px 104px;animation:sway 7.3s cubic-bezier(.45,.05,.35,1) infinite}
+.eyes{transform-origin:60px 46px;animation:blink 5.7s ease-in-out infinite}
+@keyframes sway{0%,30%,100%{transform:rotate(0)}9%{transform:rotate(-2deg)}19%{transform:rotate(1.4deg)}}
+@keyframes blink{0%,91%,100%{transform:scaleY(1)}94%{transform:scaleY(.12)}97%{transform:scaleY(1)}}
+
+.armL{transform-origin:30px 70px;animation:upL 4.9s cubic-bezier(.45,.05,.35,1) infinite}
+.armR{transform-origin:90px 70px;animation:upR 4.9s cubic-bezier(.45,.05,.35,1) infinite}
+.tick{stroke-dasharray:32;animation:tick 4.9s ease-in-out infinite}
+@keyframes upL{0%,40%,100%{transform:rotate(0)}12%,26%{transform:rotate(-9deg)}}
+@keyframes upR{0%,40%,100%{transform:rotate(0)}12%,26%{transform:rotate(9deg)}}
+@keyframes tick{0%{stroke-dashoffset:32}20%,90%{stroke-dashoffset:0}100%{stroke-dashoffset:32}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style><g class="p body"><rect x="38" y="16" width="44" height="14" rx="4" fill="#0B5D3B"/><rect x="30" y="28" width="60" height="72" rx="22" fill="#FFFFFF" stroke="#0E1A14" stroke-width="4"/><rect x="32" y="62" width="56" height="20" fill="#D4F25C"/><g class="p tick"><path d="M51 72 L57 77 L69 66" fill="none" stroke="#0E1A14" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M45 47 Q50 41 55 47 M65 47 Q70 41 75 47" fill="none" stroke="#0E1A14" stroke-width="3.5" stroke-linecap="round"/><path d="M51 53 Q60 61 69 53" fill="none" stroke="#0E1A14" stroke-width="3.5" stroke-linecap="round"/><g class="p armL"><path d="M30 70 Q18 64 16 52" fill="none" stroke="#0E1A14" stroke-width="4" stroke-linecap="round"/></g><g class="p armR"><path d="M90 70 Q102 64 104 52" fill="none" stroke="#0E1A14" stroke-width="4" stroke-linecap="round"/></g></g></svg>

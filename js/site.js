@@ -75,3 +75,41 @@ document.addEventListener('DOMContentLoaded',function(){
     void reel.offsetHeight;reel.style.transition='transform .45s ease'},480)},3200);
  });
 });
+
+/* Motion (user, Oct 23): header pills drift (light ones left, dark ones right, each at its own slow speed) and every Pip
+   switches to its animated copy (site/brand/anim/, made by brand/make_pip_anim.py) only while it is on screen.
+   Off for prefers-reduced-motion; a "Pause animations" button in the footer turns it off and is remembered here. */
+document.addEventListener('DOMContentLoaded',function(){
+ var KEY='frd-motion',reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(reduce||!('IntersectionObserver' in window))return;
+ function paused(){try{return localStorage.getItem(KEY)==='off'}catch(e){return false}}
+ var css=document.createElement('style');
+ css.textContent='@keyframes frd-drift{from{transform:translateX(var(--a))}to{transform:translateX(var(--b))}}'+
+  '@keyframes frd-bob{0%,100%{translate:0 0}50%{translate:0 var(--y)}}'+
+  'header.top .deco{will-change:transform;animation:frd-drift var(--t) linear var(--d) infinite,frd-bob var(--bt) ease-in-out infinite}'+
+  /* light pills drift left, dark pills drift right; start mid-way (negative delay) so the header is never empty */
+  'header.top .d1{--a:28vw;--b:-112vw;--t:132s;--d:-28s;--y:-3px;--bt:9s}'+
+  'header.top .d4{--a:30vw;--b:-110vw;--t:176s;--d:-100s;--y:2px;--bt:11s}'+
+  'header.top .d5{--a:112vw;--b:-28vw;--t:196s;--d:-140s;--y:-2px;--bt:13s}'+
+  'header.top .d2{--a:-104vw;--b:42vw;--t:150s;--d:-60s;--y:2px;--bt:10s}'+
+  'header.top .d3{--a:-62vw;--b:66vw;--t:118s;--d:-20s;--y:-2px;--bt:8s}'+
+  'html.frd-still header.top .deco{animation-play-state:paused}'+
+  /* pills always pass BEHIND the logo, words and buttons; on phones the top pill only peeks in from the edge */
+  'header.top .deco{z-index:0}header.top .wrap{position:relative;z-index:1}@media (max-width:640px){header.top .d1{top:-15px}}'+
+  '.frd-motion{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer}';
+ document.head.appendChild(css);
+ var pips=[].slice.call(document.querySelectorAll('img[src*="/brand/pip-"]'));
+ function swap(img,on){var s=img.getAttribute('src'),want=on?s.replace('/brand/pip-','/brand/anim/pip-'):s.replace('/brand/anim/pip-','/brand/pip-');
+  if(want===s)return;if(!on){img.src=want;return}
+  var pre=new Image();pre.onload=function(){if(!paused()&&img.dataset.vis==='1')img.src=want};pre.src=want}  /* preload: no flash; skip if missing */
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.dataset.vis=e.isIntersecting?'1':'0';
+  swap(e.target,e.isIntersecting&&!paused())})},{rootMargin:'60px'});
+ pips.forEach(function(p){io.observe(p)});
+ function apply(){var off=paused();document.documentElement.classList.toggle('frd-still',off);
+  pips.forEach(function(p){swap(p,!off&&p.dataset.vis==='1')});if(btn)btn.textContent=off?'Play animations':'Pause animations'}
+ var foot=document.querySelector('footer.foot .wrap>div'),btn=null;
+ if(foot){var p=document.createElement('p');p.className='muted';p.style.margin='10px 0 0';
+  btn=document.createElement('button');btn.type='button';btn.className='frd-motion';p.appendChild(btn);foot.appendChild(p);
+  btn.addEventListener('click',function(){try{localStorage.setItem(KEY,paused()?'on':'off')}catch(e){}apply()})}
+ apply();
+});

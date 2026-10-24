@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120"><title>(green and lime colors) Pip, reading a checklist (archive, check-your-kitchen tips)</title><style>
+.p{transform-box:view-box}
+.body{transform-origin:60px 104px;animation:sway 7.3s cubic-bezier(.45,.05,.35,1) infinite}
+.eyes{transform-origin:60px 46px;animation:blink 5.7s ease-in-out infinite}
+@keyframes sway{0%,30%,100%{transform:rotate(0)}9%{transform:rotate(-2deg)}19%{transform:rotate(1.4deg)}}
+@keyframes blink{0%,91%,100%{transform:scaleY(1)}94%{transform:scaleY(.12)}97%{transform:scaleY(1)}}
+
+.ticks{stroke-dasharray:20;animation:tick 6.4s ease-in-out infinite}
+.lines{stroke-dasharray:24;animation:write 6.4s ease-in-out infinite}
+.pen{transform-origin:90px 72px;animation:pen 6.4s ease-in-out infinite}
+@keyframes tick{0%{stroke-dashoffset:20}18%,88%{stroke-dashoffset:0}96%,100%{stroke-dashoffset:20}}
+@keyframes write{0%,16%{stroke-dashoffset:24}52%,88%{stroke-dashoffset:0}96%,100%{stroke-dashoffset:24}}
+@keyframes pen{0%,60%,100%{transform:translate(0,0)}22%{transform:translate(-2px,1px)}32%{transform:translate(1px,0)}42%{transform:translate(-2px,1px)}52%{transform:translate(1px,0)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style><g class="p body"><rect x="38" y="16" width="44" height="14" rx="4" fill="#0B5D3B"/><rect x="30" y="28" width="60" height="72" rx="22" fill="#FFFFFF" stroke="#0E1A14" stroke-width="4"/><rect x="32" y="62" width="56" height="20" fill="#D4F25C"/><g class="p eyes"><circle cx="50" cy="48" r="4.5" fill="#0E1A14"/><circle cx="70" cy="48" r="4.5" fill="#0E1A14"/></g><path d="M55 56 Q60 59 65 56" fill="none" stroke="#0E1A14" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><rect x="40" y="63" width="40" height="33" rx="4" fill="#FFFFFF" stroke="#0E1A14" stroke-width="3.5"/><rect x="52" y="59" width="16" height="7" rx="2" fill="#0B5D3B" stroke="#0E1A14" stroke-width="2.5"/><g class="p ticks"><path d="M46 73 l2.5 2.5 l4 -5 M46 81 l2.5 2.5 l4 -5" fill="none" stroke="#0E1A14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/></g><g class="p lines"><path d="M56 74 h16 M56 82 h12 M46 90 h22" fill="none" stroke="#0E1A14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></g><path d="M30 72 Q33 84 41 84" fill="none" stroke="#0E1A14" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/><g class="p pen"><path d="M90 72 Q87 84 79 84" fill="none" stroke="#0E1A14" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/></g></g></svg>
