@@ -114,3 +114,12 @@ document.addEventListener('DOMContentLoaded',function(){
   btn.addEventListener('click',function(){try{localStorage.setItem(KEY,paused()?'on':'off')}catch(e){}apply()})}
  apply();
 });
+// Links that leave our site open in a new tab (user, Oct 24). rel="noopener noreferrer" keeps the other site from
+// reaching back into this page (OWASP: reverse tabnabbing). Screen readers hear "Opens in a new tab" from one hidden
+// note per page (aria-describedby), not text inside each link, so the search on active.html never matches it.
+function outLinks(root){var ours=/(^|\.)foodrecalldigest\.com$/,note=document.getElementById('newtab-note');
+ if(!note){note=document.createElement('span');note.id='newtab-note';note.hidden=true;note.textContent='Opens in a new tab';document.body.appendChild(note)}
+ root.querySelectorAll('a[href^="http"]').forEach(function(a){var h;try{h=new URL(a.href).hostname}catch(e){return}
+  if(ours.test(h)||h===location.hostname||a.target)return;
+  a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-describedby','newtab-note')})}
+document.addEventListener('DOMContentLoaded',function(){outLinks(document)});
