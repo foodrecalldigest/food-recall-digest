@@ -30,6 +30,7 @@ function setCard(c,open,animate){
 }
 function openHash(){var h=location.hash&&document.getElementById(location.hash.slice(1));if(!h)return;
  if(h.classList.contains('rc'))setCard(h,true,false);
+ if(h.classList.contains('ng')){var m=h.querySelector('details.nmore');if(m)m.open=true}/* email "N more stories" link */
  var d=h.tagName==='DETAILS'?h:h.closest('details');while(d){d.open=true;d=d.parentElement&&d.parentElement.closest('details')}
  h.scrollIntoView({block:'start'})}
 function setCards(o,el){var root=(el&&el.closest('section'))||document;root.querySelectorAll('.rc').forEach(function(c){setCard(c,o,false)})}
